@@ -5,14 +5,11 @@
 		initializeStores,
 		Drawer,
 		getDrawerStore,
-		LightSwitch,
-		Avatar,
 		storePopup,
-		popup,
-		type PopupSettings
+		LightSwitch
 	} from '@skeletonlabs/skeleton';
 	import '../app.pcss';
-	import { IconMenu2 } from '@tabler/icons-svelte';
+
 	import {
 		computePosition,
 		autoUpdate,
@@ -23,23 +20,17 @@
 	} from '@floating-ui/dom';
 
 	import Navigation from '$lib/components/Navigation.svelte';
-	import ProfilePopup from '$lib/components/ProfilePopup.svelte';
+	import Icon from '@iconify/svelte';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 	initializeStores();
 	const drawerStore = getDrawerStore();
 
 	const drawerOpen = () => drawerStore.open({ width: 'w-3/5' });
-
-	const popupAvatar: PopupSettings = {
-		event: 'click',
-		target: 'popupAvatar',
-		placement: 'bottom'
-	};
 </script>
 
 <svelte:head>
-	<title>SvelteKit Template</title>
+	<title>Dennyweb.dev</title>
 </svelte:head>
 
 <Drawer class="bg-surface-500">
@@ -56,21 +47,18 @@
 			<svelte.fragment slot="lead" class="flex justify-between">
 				<button class="btn btn-sm lg:hidden" on:click={drawerOpen}>
 					<span>
-						<IconMenu2 color="white" />
+						<Icon icon="mingcute:menu-fill" height={28} />
 					</span>
 				</button>
-				<h1 class="h3 self-center pl-2 font-semibold text-white">
-					SvelteKit Template
-				</h1>
+				<div class="self-center">
+					<h1 class="h3 self-center pl-2 font-semibold text-white">
+						Dennyweb.dev
+					</h1>
+					<p class="text-center font-semibold text-white">Your favorite dev</p>
+				</div>
 			</svelte.fragment>
 			<svelte:fragment slot="trail">
-				<div use:popup={popupAvatar}>
-					<Avatar
-						width="w-12"
-						border="border-2 hover:!border-primary-500"
-						cursor="cursor-pointer" />
-				</div>
-				<ProfilePopup />
+				<LightSwitch />
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>

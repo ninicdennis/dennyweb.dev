@@ -1,6 +1,7 @@
 import { join } from 'path';
 import type { Config } from 'tailwindcss';
 import { CatppuccinTheme } from './catppuccin-theme';
+import { CustomTheme } from './custom-theme';
 
 // 1. Import the Skeleton plugin
 import { skeleton } from '@skeletonlabs/tw-plugin';
@@ -21,7 +22,7 @@ const config = {
 	},
 	plugins: [
 		// 4. Append the Skeleton plugin (after other plugins)
-		skeleton({ themes: { custom: [CatppuccinTheme] } })
+		skeleton({ themes: { custom: [CatppuccinTheme, CustomTheme] } })
 	]
 } satisfies Config;
 
