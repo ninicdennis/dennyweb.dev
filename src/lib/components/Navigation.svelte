@@ -11,7 +11,7 @@
 <nav class="list-nav p-4">
 	<ul>
 		<li><a href="/" on:click={drawerClose}>Home</a></li>
-		<li><a href="/portfolio" on:click={drawerClose}>Portfolio</a></li>
+		<li><a href="/portfolio" on:click={drawerClose}>Projects</a></li>
 		<li><a href="/posts" on:click={drawerClose}>Posts</a></li>
 	</ul>
 </nav>

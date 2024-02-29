@@ -14,7 +14,17 @@
 			rounded="rounded-2xl" />
 		<h1 class="leadi text-4xl font-bold sm:text-5xl">Denny Ninic</h1>
 		<p class="mb-8 mt-2 px-8 text-xl font-semibold dark:text-primary-500">
-			A fullstack developer working on amazing and incredible technologies!
+			A frontend developer working on amazing and incredible technologies!
 		</p>
+		<div class="flex gap-2">
+			<button
+				class="btn rounded bg-primary-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
+				<a href="/portfolio">Portfolio</a>
+			</button>
+			<button
+				class="btn rounded bg-secondary-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
+				<a href="/posts">Posts</a>
+			</button>
+		</div>
 	</div>
 </section>

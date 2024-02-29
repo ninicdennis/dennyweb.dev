@@ -32,7 +32,7 @@
 <Container classStyle="flex flex-wrap ">
 	{#each stackCards as card}
 		<div
-			class="card card-hover m-2 mt-4 flex-[1_0_20%] p-4 hover:bg-surface-300 dark:hover:bg-secondary-500">
+			class="card card-hover m-2 flex-[1_0_20%] p-4 hover:bg-surface-300 dark:hover:bg-secondary-500">
 			<div class="flex h-full min-w-24 flex-col items-center justify-between">
 				<Icon icon={card.icon} width={40} />
 				<h3 class="mt-2 text-xl font-semibold">

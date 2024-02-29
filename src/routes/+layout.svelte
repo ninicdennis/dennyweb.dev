@@ -21,7 +21,17 @@
 
 	import Navigation from '$lib/components/Navigation.svelte';
 	import Icon from '@iconify/svelte';
+	import { fly } from 'svelte/transition';
+	import { cubicIn, cubicOut } from 'svelte/easing';
 
+	export let data: { pathname: string };
+
+	const duration = 300;
+	const delay = duration + 100;
+	const y = 10;
+
+	const transitionIn = { easing: cubicOut, y, duration, delay };
+	const transitionOut = { easing: cubicIn, y: -y, duration };
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 	initializeStores();
 	const drawerStore = getDrawerStore();
@@ -63,7 +73,12 @@
 		</AppBar>
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft"><Navigation /></svelte:fragment>
-	<div class="flex flex-col justify-center p-4">
-		<slot />
-	</div>
+	{#key data.pathname}
+		<div
+			class="flex flex-col justify-center p-4"
+			in:fly={transitionIn}
+			out:fly={transitionOut}>
+			<slot />
+		</div>
+	{/key}
 </AppShell>
