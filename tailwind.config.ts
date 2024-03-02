@@ -21,7 +21,8 @@ const config = {
 		extend: {}
 	},
 	plugins: [
-		// 4. Append the Skeleton plugin (after other plugins)
+		require('@tailwindcss/typography'),
+
 		skeleton({ themes: { custom: [CatppuccinTheme, CustomTheme] } })
 	]
 } satisfies Config;

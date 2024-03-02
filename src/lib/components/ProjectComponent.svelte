@@ -61,7 +61,7 @@
 	];
 </script>
 
-<div class="m-4 mt-4 flex items-center justify-center p-2">
+<div class="my-2 flex items-center justify-center p-2">
 	<h2 class="text-3xl font-bold">Projects</h2>
 </div>
 

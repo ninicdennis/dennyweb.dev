@@ -39,10 +39,6 @@
 	const drawerOpen = () => drawerStore.open({ width: 'w-3/5' });
 </script>
 
-<svelte:head>
-	<title>Dennyweb.dev</title>
-</svelte:head>
-
 <Drawer class="bg-surface-500">
 	<div class="flex items-center justify-between bg-secondary-500">
 		<h2 class="p-4 font-bold text-white">Navigation</h2>
